@@ -1,8 +1,46 @@
 {% extends "base.html" %}
 {% block body %}
 {% include "navbar.html" %}
+<style>
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: 500;
+    letter-spacing: -2px;
+    margin: 15px;
+    line-height: 1;
+    text-shadow: #EDEDED 1px 1px 0;
+  } 
+
+.introform {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin: 15px;
+  width: 50%;
+  height: 50%;
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+
+.formTitle {
+  color:whitesmoke;
+  margin: 50px 10px;
+}
+
+</style>
+
 <section class="hero is-primary is-bold is-large">
-  <div class="hero-body"></div>
+  <div class="hero-body">
+    <h1>Welcome!</h1>
+    <div class="introform">
+      <div class="formTitle">
+        Get Started! Please take 10 minutes to fill out this simple form.
+        <a id="form-button" class="form-button button is-primary is-inverted is-outlined">Click Here</a>
+      </div>
+      </button>
+    </div>
+  </div>
 </section>
 {% endblock %}
 {% block scripts %}
