@@ -30,9 +30,33 @@ class User(Base):
     username = Column(String(30), unique=True)
     password = Column(String(512))
     email = Column(String(50))
+    healthcare = Column(String(50))
+    age = Column(Integer)
 
     def __repr__(self):
         return '<User %r>' % self.username
+
+
+class Symptom(Base):
+    __tablename__ = "symptom"
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String(30), unique=True)
+    severity = Column(Integer)
+
+    def __repr__(self):
+        return '<Symptom %r>' % self.name
+
+
+class Doctor(Base):
+    __tablename__ = "doctor"
+
+    id = Column(Integer, primary_key=True)
+    username = Column(String(30), unique=True)
+    specialty = Column(String(30))
+
+    def __repr__(self):
+        return '<Doctor %r>' % self.username
 
 
 engine = db_connect()  # Connect to database
