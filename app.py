@@ -40,7 +40,6 @@ def logout():
     session['logged_in'] = False
     return redirect(url_for('login'))
 
-
 # -------- Signup ---------------------------------------------------------- #
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -50,9 +49,11 @@ def signup():
             username = request.form['username'].lower()
             password = helpers.hash_password(request.form['password'])
             email = request.form['email']
+            healthcare = request.form.get('healthcare', 'Kaiser')
+            age = request.form.get('age', 22)
             if form.validate():
                 if not helpers.username_taken(username):
-                    helpers.add_user(username, password, email)
+                    helpers.add_user(username, password, email, healthcare, age)
                     session['logged_in'] = True
                     session['username'] = username
                     return json.dumps({'status': 'Signup successful'})
@@ -76,6 +77,21 @@ def settings():
         user = helpers.get_user()
         return render_template('settings.html', user=user)
     return redirect(url_for('login'))
+
+
+# -------- Symptom ---------------------------------------------------------- #
+@app.route('/symptom', methods=['POST'])
+def create_symptom():
+    name = request.form['name'].lower()
+    severity = request.form['severity']
+    helpers.add_symptom(name, severity)
+    return json.dumps({'status': 'Symptom successfully added'})
+
+
+@app.route('/symptom/<name>', methods=['GET'])
+def get_symptom(name):
+    symptom = helpers.get_symptom(name)
+    return render_template('symptoms.html', symptom=symptom)
 
 
 # ======== Main ============================================================== #

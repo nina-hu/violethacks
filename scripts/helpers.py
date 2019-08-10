@@ -33,11 +33,24 @@ def get_user():
         return user
 
 
-def add_user(username, password, email):
+def add_user(username, password, email, healthcare, age):
     with session_scope() as s:
-        u = tabledef.User(username=username, password=password.decode('utf8'), email=email)
+        u = tabledef.User(username=username, password=password.decode('utf8'), email=email, healthcare=healthcare, age=age)
         s.add(u)
         s.commit()
+
+
+def add_symptom(name, severity):
+    with session_scope() as s:
+        u = tabledef.User(name=name, severity=severity)
+        s.add(u)
+        s.commit()
+
+
+def get_symptom(name):
+    with session_scope() as s:
+        symptom = s.query(tabledef.Symptom).filter(tabledef.Symptom.name).first()
+        return symptom
 
 
 def change_user(**kwargs):
