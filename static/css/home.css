@@ -1,0 +1,60 @@
+.home-content {
+    display: flex;
+    background-color: white;
+    color: black;
+}
+  
+.top-banner {
+    background-image: url("https://images.unsplash.com/photo-1477468572316-36979010099d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5952cbb9337a4fea09380091f6a90f5c&auto=format&fit=crop&w=2089&q=80");
+    width: 100%;
+    height: 400px;
+    position: relative;
+    clip-path: ellipse(100% 80% at 60% 20%);
+}
+  
+.top-banner p {
+    text-transform: capitalize;
+    font-family: 'KoHo', sans-serif;
+    margin: 50px;
+    padding: 15px;
+    color: white;
+    font-size: 80px;
+}
+  
+.top-banner .fade { 
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    height: 100px; 
+    z-index: 2; 
+    background: rgba(255, 255, 255, 0) linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%) repeat scroll 0 0;  
+}
+  
+h1 {
+    font-family: 'KoHo', sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    letter-spacing: -2px;
+    margin: 15px;
+    line-height: 1;
+    text-shadow: #EDEDED 1px 1px 0;
+} 
+  
+.introform {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin: 15px;
+    width: 50%;
+    height: 50%;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+  
+.formTitle {
+    color:whitesmoke;
+    margin: 50px 10px;
+}
+
+.google-cal {
+    position: relative;
+}

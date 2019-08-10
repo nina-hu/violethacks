@@ -48,7 +48,7 @@ def signup():
         if request.method == 'POST':
             username = request.form['username'].lower()
             email = request.form['email']
-            #password = helpers.hash_password(request.form['password'])
+            password = helpers.hash_password(request.form['password'])
             #healthcare = request.form.get('healthcare')
             #age = request.form.get('age', 22)
             if form.validate():
