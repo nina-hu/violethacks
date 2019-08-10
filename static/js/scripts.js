@@ -29,13 +29,17 @@ $(document).ready(function() {
   $(document).on("click", "#login-button", login);
   $(document).keypress(function(e) {if(e.which === 13) {login();}});
   
+
+  //login information post into the account.db
   $(document).on("click", "#signup-button", function() {
     $.post({
       type: "POST",
       url: "/signup",
       data: {"username": $("#signup-user").val(), 
-             "password": $("#signup-pass").val(), 
-             "email": $("#signup-mail").val()},
+             "email": $("#signup-mail").val(),
+             "password": $("#signup-pass").val()}, 
+             //"healthcare": $("#signup-provider").val(),
+             //"age": $("#signup-age").val()},
       success(response) {
         var status = JSON.parse(response)["status"];
         if (status === "Signup successful") { location.reload(); }
@@ -43,6 +47,24 @@ $(document).ready(function() {
       }
     });
   });
+
+
+  // // healthcare information post into account.db with the data attach to the user
+  // $(document).on("click", "#form-button", function() {
+  //   $.post({
+  //     type: "POST",
+  //     url: "/signup",
+  //     data: {"username": $("#signup-user").val(), 
+  //            "password": $("#signup-pass").val(), 
+  //            "email": $("#signup-mail").val()},
+  //     success(response) {
+  //       var status = JSON.parse(response)["status"];
+  //       if (status === "Signup successful") { location.reload(); }
+  //       else { message(status, true, "signup-box"); }
+  //     }
+  //   });
+  // });
+
 
   $(document).on("click", "#save", function() {
     $.post({

@@ -28,11 +28,3 @@
   padding: 30px;
 }
 
-.introform {
-  display: flex;
-  flex-direction: row;
-}
-
-.formTitle {
-  color:black;
-}

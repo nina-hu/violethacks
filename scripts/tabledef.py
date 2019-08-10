@@ -30,8 +30,8 @@ class User(Base):
     username = Column(String(30), unique=True)
     password = Column(String(512))
     email = Column(String(50))
-    healthcare = Column(String(50))
-    age = Column(Integer)
+    #healthcare = Column(String(50))
+    #age = Column(Integer)
 
     def __repr__(self):
         return '<User %r>' % self.username

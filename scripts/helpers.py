@@ -33,11 +33,18 @@ def get_user():
         return user
 
 
-def add_user(username, password, email, healthcare, age):
+# def add_user(username, password, email, healthcare, age):
+#     with session_scope() as s:
+#         u = tabledef.User(username=username, password=password.decode('utf8'), email=email, healthcare=healthcare, age=age)
+#         s.add(u)
+#         s.commit()
+
+def add_user(username, password, email):
     with session_scope() as s:
-        u = tabledef.User(username=username, password=password.decode('utf8'), email=email, healthcare=healthcare, age=age)
+        u = tabledef.User(username=username, password=password.decode('utf8'), email=email)
         s.add(u)
         s.commit()
+
 
 
 def add_symptom(name, severity):
