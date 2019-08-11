@@ -9,42 +9,39 @@
 <section class="home-content">
   <div class="nav">
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="#news">Find a Doctor</a></li>
-      <li><a href="#contact">Your Health</a></li>
-      <li><a href="#about">Calendar</a></li>
-      <li><a href="#about">Book Appointment</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a class="navDoctor">Find a Doctor</a></li>
+        <li><a href="/health">Your Health</a></li>
+        <li><a class="navCalendar">Calendar</a></li>
+        <li><a class="navAppoint">Book Appointment</a></li>
+      
     </ul> 
   </div>
 
   <div class="profile-page">
     <div class="top-banner"> 
-        <p>Good afternoon, {{session.username}}</p>
+        <p>Good <span class="time"></span>, {{session.username}}</p>
         <div class="fade"></div>
     </div>
       
       
     <div class="appointment">
-      <p>Your next appointment is in 5 days, on August 12 at 3pm.</p>
+      <p>Your next appointment is in 5 days, on August 16 at 3pm.</p>
     </div>
 
     <div class="healthinfo-content">
-      <div class="facts">
+      <h2> DID YOU KNOW?</h2>
+      <ul class="facts">
         <!-- onload there would be 3 random facts box -->
-
-      </div>
+      </ul>
     </div>
     
   </div>
-<!-- <div class="google-cal">
-  <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=bmluYS5odXV1QGdtYWlsLmNvbQ&amp;src=emhpbHVmZkBnbWFpbC5jb20&amp;color=%237CB342&amp;color=%239E69AF&amp;mode=WEEK&amp;showPrint=0&amp;showTz=0&amp;showNav=1&amp;showTitle=0" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-</div> -->
 
   
 </section>
 {% endblock %}
 {% block scripts %}
-<script src="facts.js"></script>
 <script src="../static/js/scripts.js"></script>
 <script src="../static/js/home.js"></script>
 {% endblock %}

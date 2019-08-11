@@ -47,14 +47,14 @@ def signup():
         form = forms.LoginForm(request.form)
         if request.method == 'POST':
             username = request.form['username'].lower()
-            email = request.form['email']
             password = helpers.hash_password(request.form['password'])
+            email = request.form['email']
             #healthcare = request.form.get('healthcare')
             #age = request.form.get('age', 22)
             if form.validate():
                 if not helpers.username_taken(username):
                     #helpers.add_user(username, email, password, healthcare, age)
-                    helpers.add_user(username, email, password)
+                    helpers.add_user(username, password, email)
                     session['logged_in'] = True
                     session['username'] = username
                     return json.dumps({'status': 'Signup successful'})
