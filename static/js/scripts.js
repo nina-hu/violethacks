@@ -1,3 +1,7 @@
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 function message(status, shake=false, id="") {
   if (shake) {
     $("#"+id).effect("shake", {direction: "right", times: 2, distance: 8}, 250);
@@ -24,12 +28,20 @@ var login = function() {
   });
 };
 
+function renderInfoFacts () {
+  let randNum1 = getRandomInt(STORE.length);
+  let randNum2 = getRandomInt(STORE.length);
+  let randNum3 = getRandomInt(STORE.length);
+
+  $(".facts").html(`<span background-color="${STORE[randNum1].color}"> <p>${STORE[randNum1].fact}</p></span><span background-color="${STORE[randNum2].color}"> <p>${STORE[randNum2].fact}</p></span><span background-color="${STORE[randNum3].color}"> <p>${STORE[randNum4].fact}</p></span>`);
+
+}
+
+
 $(document).ready(function() {
-  
+  renderInfoFacts();
   $(document).on("click", "#login-button", login);
   $(document).keypress(function(e) {if(e.which === 13) {login();}});
-  
-
   //login information post into the account.db
   $(document).on("click", "#signup-button", function() {
     $.post({
@@ -42,10 +54,13 @@ $(document).ready(function() {
              //"age": $("#signup-age").val()},
       success(response) {
         var status = JSON.parse(response)["status"];
-        if (status === "Signup successful") { location.reload(); }
+        if (status === "Signup successful") { 
+          location.reload(); 
+        }
         else { message(status, true, "signup-box"); }
       }
     });
+  
   });
 
 

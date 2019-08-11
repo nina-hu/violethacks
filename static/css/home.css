@@ -3,7 +3,46 @@
     background-color: white;
     color: black;
 }
+
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
   
+.nav {
+    display: flex;
+    position: relative;
+    width: 300px;
+    height: 100vh;
+    background: #FFFFFF;
+    padding-top: 100px;
+}
+
+.nav ul {
+    list-style-type: none;
+    width: 100%;
+    flex-flow: column;
+  }
+
+.nav li {
+    padding-bottom: 50px;
+}
+
+.nav li a {
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 25px;
+    font-family: 'KoHo', sans-serif;
+}
+  
+  /* Change the link color on hover */
+  .nav li a:hover {
+    background-color: #555;
+    color: white;
+  }
+
 .top-banner {
     background-image: url("https://images.unsplash.com/photo-1477468572316-36979010099d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5952cbb9337a4fea09380091f6a90f5c&auto=format&fit=crop&w=2089&q=80");
     width: 100%;
@@ -12,6 +51,19 @@
     clip-path: ellipse(100% 80% at 60% 20%);
 }
   
+.appointment p {
+    font-family: KoHo;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 23px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 3px;
+    color: #3B2727;
+    margin: 50px;
+}
+
 .top-banner p {
     text-transform: capitalize;
     font-family: 'KoHo', sans-serif;
@@ -26,7 +78,6 @@
     bottom: 0; 
     width: 100%; 
     height: 100px; 
-    z-index: 2; 
     background: rgba(255, 255, 255, 0) linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%) repeat scroll 0 0;  
 }
   
