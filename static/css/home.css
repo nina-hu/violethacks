@@ -179,6 +179,7 @@ h1 {
     align-items: center;
     justify-content: space-evenly;
     margin: 15px;
+    font-size: 20px;
 }
 
 .basicInfo img {
@@ -190,6 +191,7 @@ h1 {
     font-family: 'KoHo', sans-serif;
     display: flex;
     flex-direction: column;
-    
+    margin: 20px;
+    padding: 15px;
 }
 
