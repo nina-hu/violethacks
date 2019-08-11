@@ -94,6 +94,38 @@ def get_symptom(name):
     symptom = helpers.get_symptom(name)
     return render_template('symptoms.html', symptom=symptom)
 
+# -------- Health Page ---------------------------------------------------------- #
+@app.route('/health', methods=['GET', 'POST'])
+def health():
+    if session.get('logged_in'):
+        user = helpers.get_user()
+        return render_template('health.html', user=user)
+    return redirect(url_for('login'))
+
+# -------- Doctor Page ---------------------------------------------------------- #
+@app.route('/doctor', methods=['GET', 'POST'])
+def doctor():
+    if session.get('logged_in'):
+        user = helpers.get_user()
+        return render_template('doctor.html', user=user)
+    return redirect(url_for('login'))
+
+
+# -------- Calendar Page ---------------------------------------------------------- #
+@app.route('/calendar', methods=['GET', 'POST'])
+def calendar():
+    if session.get('logged_in'):
+        user = helpers.get_user()
+        return render_template('calendar.html', user=user)
+    return redirect(url_for('login'))
+
+# -------- Book Appointment Page ---------------------------------------------------------- #
+@app.route('/bookappointment', methods=['GET', 'POST'])
+def bookappointment():
+    if session.get('logged_in'):
+        user = helpers.get_user()
+        return render_template('bookappointment.html', user=user)
+    return redirect(url_for('login'))
 
 # ======== Main ============================================================== #
 if __name__ == "__main__":

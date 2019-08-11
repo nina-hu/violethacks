@@ -94,15 +94,6 @@ function navBar () {
     $(".profile-page").html(`<div class="googCal">CALENDAR<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=bmluYS5odXV1QGdtYWlsLmNvbQ&amp;src=emhpbHVmZkBnbWFpbC5jb20&amp;color=%237CB342&amp;color=%239E69AF&amp;mode=WEEK&amp;showPrint=0&amp;showTz=0&amp;showNav=1&amp;showTitle=0" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe></div>`)
   });
 
-  // Find a Doctor Navigation, it'll take from the database of doctors from your provider and return the one that is nearby to you or have a convienent time for your schedule.
-  $(".nav li").on("click", ".navDoctor", function (){
-    $(".profile-page").html(`<div class="googCal">Doctor<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=bmluYS5odXV1QGdtYWlsLmNvbQ&amp;src=emhpbHVmZkBnbWFpbC5jb20&amp;color=%237CB342&amp;color=%239E69AF&amp;mode=WEEK&amp;showPrint=0&amp;showTz=0&amp;showNav=1&amp;showTitle=0" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe></div>`)
-  });
-
-  // Your Health Profile Navigation
-  $(".nav li").on("click", ".navHealth", function (){
-    $(".profile-page").html(navHealthhtml);
-  });
 }
 
 function renderTime () {

@@ -6,26 +6,26 @@
     <link rel="stylesheet" href="../static/css/home.css">
 </head>
 <section class="home-content">
-        <div class="nav">
-          <ul>
+    <div class="nav">
+        <ul>
             <li><a href="/">Home</a></li>
-            <li><a class="navDoctor">Find a Doctor</a></li>
+            <li><a href="/doctor">Find a Doctor</a></li>
             <li><a href="/health">Your Health</a></li>
-            <li><a class="navCalendar">Calendar</a></li>
-            <li><a class="navAppoint">Book Appointment</a></li>
-          </ul> 
-        </div>
+            <li><a href="/calendar">Calendar</a></li>
+            <li><a href="/bookappointment">Book Appointment</a></li>
+        </ul> 
+    </div>
 
     <div class=".profile-page">
         <div class="profile">
             YOUR HEALTH
             <ul class="basicInfo">
-                <li><img src=""></li>
-                <li>{{session.username}}</li>
+                <li><img src="https://storage.googleapis.com/support-forums-api/avatar/profile-345683-7802028102359571311.png" alt="profile picture"></li>
+                <li>Name: {{session.username}}</li>
                 <li>Physician: Dr. Sonali Singh</li>
                 <li>Edit</li>
             </ul>
-            <ul>
+            <ul class="risks">
                 <li>Age: 23</li>
                 <li>Risk factors: non-smoker, breast cancer in family history, active lifestyle.</li>
                 <li>Doctor preferences: female, speaks Icelandic.</li>
@@ -60,5 +60,4 @@
 {% endblock %}
 {% block scripts %}
 <script src="../static/js/scripts.js"></script>
-<script src="../static/js/home.js"></script>
 {% endblock %}

@@ -152,10 +152,21 @@ h1 {
     color: #535353;
 }
 
+.profile-page ul {
+    position: relative;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
 .cancerCards {
-    position: absolute;
-    width: 708px;
+    font-family: 'KoHo', sans-serif;
+    width: 95%;
     height: 237px;
+    margin: 15px;
+    padding: 25px;
     background: rgba(255, 210, 224, 0.42);
     box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.02);
     border-radius: 4px;
@@ -163,9 +174,22 @@ h1 {
 
 .basicInfo {
     font-family: 'KoHo', sans-serif;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 15px;
 }
 
-.riskFactor {
-    position: fixed;
-    right: 100px;
+.basicInfo img {
+    width: 100px;
+    height: 100px;
 }
+
+.risks {
+    font-family: 'KoHo', sans-serif;
+    display: flex;
+    flex-direction: column;
+    
+}
+
